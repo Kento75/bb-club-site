@@ -1,4 +1,5 @@
 class LessonController < ApplicationController
+
   def step1
     render plain: "こんにちは、#{params[:name]}さん"
   end
@@ -16,7 +17,7 @@ class LessonController < ApplicationController
   end
 
   def step5
-    flash[:notice] = "step6に移動します。"
+    flash[:notice] = "step6に移動しました。"
     redirect_to action: "step6"
   end
 
@@ -30,11 +31,11 @@ class LessonController < ApplicationController
 
   def step8
     @price = 1000
-    render "step8"
+    render "step7"
   end
 
   def step9
-    @comment = "<script>alert('危険！')</script>こんにちは。"
+    @comment = "<script>alert('危険')</script>こんにちは"
   end
 
   def step10
@@ -55,7 +56,7 @@ class LessonController < ApplicationController
   end
 
   def step14
-    @message = "ごきげんいかが？\nRailsの勉強をがんばりましょう。"
+    @message = "ご機嫌いかが？¥nRailsの勉強を頑張りましょう"
   end
 
   def step17
@@ -63,7 +64,9 @@ class LessonController < ApplicationController
   end
 
   def step18
-    @items = { "フライパン" => 2680, "ワイングラス" => 2550,
-               "ペッパーミル" => 4515, "ピーラー" => 945 }
+    @items = {
+      "フライパン" => 2680, "ワイングラス" => 2550, "ペッパーミル" => 4515, "ピーラー"=> 945
+    }
   end
+
 end
