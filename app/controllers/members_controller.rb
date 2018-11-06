@@ -5,7 +5,9 @@ class MembersController < ApplicationController
     @members = Member.order("number")
   end
   
+  # 会員情報の詳細
   def show
+    @member = Member.find(params[:id])
   end
 
   def new
@@ -21,5 +23,11 @@ class MembersController < ApplicationController
   end
 
   def destroy
+  end
+
+  # 検索
+  def search
+    @members = Member.search(params[:q])
+    render "index"
   end
 end
