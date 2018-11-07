@@ -30,10 +30,24 @@ class MembersController < ApplicationController
     end
   end
 
+  # 会員情報の更新
   def update
+    @member = Member.find(params[:id])
+    # フォームデータのセット
+    @member.assign_attributes(params[:member])
+    if @member.save
+      # showアクションに遷移
+      redirect_to @member, notice: "会員情報を更新しました。"
+    else
+      render "edit"
+    end
   end
 
+  # 会員の削除
   def destroy
+    @member = Member.find(params[:id])
+    @member.destroy
+    redirect_to :members, notice: "会員を削除しました。"
   end
 
   # 検索
