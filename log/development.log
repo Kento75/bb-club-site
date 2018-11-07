@@ -1790,3 +1790,97 @@ Processing by MembersController#create as HTML
 Completed 200 OK in 294ms (Views: 275.2ms | ActiveRecord: 0.8ms)
 
 
+Started POST "/members" for 127.0.0.1 at 2018-11-08 06:15:08 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/owner/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EIT6529Z0ruUj6UYlK3LcAY1Byq1TFgAGid3fmRt+T+tL7/ifNnp16Msy6fNNDfaPavzPGGFrow7FU1MIDLRDg==", "member"=>{"number"=>"", "name"=>"", "full_name"=>"", "sex"=>"1", "birthday(1i)"=>"1980", "birthday(2i)"=>"1", "birthday(3i)"=>"1", "email"=>"", "administrator"=>"0"}, "commit"=>"Create Member"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/members_controller.rb:26
+  [1m[36mMember Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "members" WHERE "members"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:26
+  [1m[36mMember Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "members" WHERE LOWER("members"."name") = LOWER(?) LIMIT ?[0m  [["name", ""], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:26
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/members_controller.rb:26
+  Rendering members/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.6ms)
+  Rendered members/_form.html.erb (70.7ms)
+  Rendered members/new.html.erb within layouts/application (74.0ms)
+  Rendered shared/_header.html.erb (1.0ms)
+  Rendered shared/_login_form.html.erb (0.2ms)
+  Rendered shared/_sidebar.html.erb (1.9ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 678ms (Views: 260.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/members" for 127.0.0.1 at 2018-11-08 06:15:11 +0900
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY number[0m
+  ↳ app/views/members/index.html.erb:11
+  Rendered members/index.html.erb within layouts/application (4.8ms)
+  Rendered shared/_header.html.erb (2.9ms)
+  Rendered shared/_login_form.html.erb (0.3ms)
+  Rendered shared/_sidebar.html.erb (2.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 39ms (Views: 36.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/members/new" for 127.0.0.1 at 2018-11-08 06:15:16 +0900
+Processing by MembersController#new as HTML
+  Rendering members/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.4ms)
+  Rendered members/_form.html.erb (6.9ms)
+  Rendered members/new.html.erb within layouts/application (9.1ms)
+  Rendered shared/_header.html.erb (1.1ms)
+  Rendered shared/_login_form.html.erb (0.3ms)
+  Rendered shared/_sidebar.html.erb (2.4ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 42ms (Views: 38.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/members" for 127.0.0.1 at 2018-11-08 06:15:17 +0900
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dIn/URDqGSJzLb8WPOCbo4AvJbPu7jFnfMEO+QX2JQfnt7ftcXsl8cUlvPZdL+03eJRi98In6tRvHSrVA2Dnpg==", "member"=>{"number"=>"", "name"=>"", "full_name"=>"", "sex"=>"1", "birthday(1i)"=>"1980", "birthday(2i)"=>"1", "birthday(3i)"=>"1", "email"=>"", "administrator"=>"0"}, "commit"=>"登録する"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/members_controller.rb:26
+  [1m[36mMember Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "members" WHERE "members"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:26
+  [1m[36mMember Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "members" WHERE LOWER("members"."name") = LOWER(?) LIMIT ?[0m  [["name", ""], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:26
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/members_controller.rb:26
+  Rendering members/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.6ms)
+  Rendered members/_form.html.erb (5.8ms)
+  Rendered members/new.html.erb within layouts/application (8.0ms)
+  Rendered shared/_header.html.erb (2.0ms)
+  Rendered shared/_login_form.html.erb (0.2ms)
+  Rendered shared/_sidebar.html.erb (1.8ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 37ms (Views: 33.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/members" for 127.0.0.1 at 2018-11-08 06:19:06 +0900
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GzCuLn7+tFshX9dUshdYVdp93J+/usvM4DbXIhPWoMWmm+srbX6PNxb8uevrjqT/4eMoiWtzPUDBBO0QV4mI9A==", "member"=>{"number"=>"", "name"=>"Taro!", "full_name"=>"", "sex"=>"1", "birthday(1i)"=>"1980", "birthday(2i)"=>"1", "birthday(3i)"=>"1", "email"=>"", "administrator"=>"0"}, "commit"=>"登録する"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/members_controller.rb:26
+  [1m[36mMember Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "members" WHERE "members"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:26
+  [1m[36mMember Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "members" WHERE LOWER("members"."name") = LOWER(?) LIMIT ?[0m  [["name", "Taro!"], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:26
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/members_controller.rb:26
+  Rendering members/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.6ms)
+  Rendered members/_form.html.erb (6.0ms)
+  Rendered members/new.html.erb within layouts/application (9.1ms)
+  Rendered shared/_header.html.erb (1.4ms)
+  Rendered shared/_login_form.html.erb (0.2ms)
+  Rendered shared/_sidebar.html.erb (1.8ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 48ms (Views: 34.7ms | ActiveRecord: 0.8ms)
+
+

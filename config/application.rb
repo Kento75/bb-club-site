@@ -34,5 +34,8 @@ module Asagao
 
     # あとで必ずfalseにする
     config.action_controller.permit_all_parameters = true
+
+    # 国際化対応
+    config.i18n.default_locale = :ja
   end
 end
