@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root "top#index"  # `/` の時にtop/index にルーティング
-  get "about" => "top#about", as: "about"  # ルーティングにget を使用する　topContoroller の about を呼び出し 
+  root "top#index"
+  get "about" => "top#about", as: "about"
 
   1.upto(18) do |n|
     get "lesson/step#{n}(/:name)" => "lesson#step#{n}"
@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :members do
     get "search", on: :collection
   end
+
+  resource :session, only: [:create, :destroy]
 end

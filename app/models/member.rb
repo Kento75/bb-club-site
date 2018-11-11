@@ -1,5 +1,7 @@
 class Member < ApplicationRecord
 
+  has_secure_password
+
   # 背番号バリデータ
   validates :number, presence: true,
     numericality: {
