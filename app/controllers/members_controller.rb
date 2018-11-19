@@ -1,4 +1,5 @@
 class MembersController < ApplicationController
+  before_action :login_required
 
   # 会員一覧画面
   def index

@@ -4,4 +4,11 @@ class ApplicationController < ActionController::Base
   end
   # テンプレートから使用できるように登録
   helper_method :current_member
+
+  class LoginRequired < StandardError; end
+  class Forbidden < StandardError; end
+
+  private def login_required
+    raise LoginRequired unless current_member
+  end
 end

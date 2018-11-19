@@ -2311,3 +2311,81 @@ Processing by TopController#index as HTML
 Completed 200 OK in 26ms (Views: 23.7ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-11-20 06:14:39 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/owner/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by TopController#index as HTML
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (1.5ms)
+  Rendered shared/_header.html.erb (2.0ms)
+  Rendered shared/_login_form.html.erb (0.8ms)
+  Rendered shared/_sidebar.html.erb (3.5ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 212ms (Views: 204.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-11-20 06:14:51 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zvuRldH5BQHbycC9ra91a01QNxmKnEtx9wp/w4Emsmi92xmUu7rBgzGVLeS51cXFvadlxM0l537gFFeH2h2bbw==", "name"=>"Taro", "password"=>"[FILTERED]"}
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."name" = ? LIMIT ?[0m  [["name", "Taro"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3
+Redirected to http://localhost:3000/
+Completed 302 Found in 72ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-20 06:14:51 +0900
+Processing by TopController#index as HTML
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_header.html.erb (1.1ms)
+  Rendered shared/_login_form.html.erb (0.6ms)
+  Rendered shared/_sidebar.html.erb (2.4ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 28ms (Views: 25.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-11-20 06:15:31 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mX9pcTfy2+XUfvRawNA6rFVp7GjenSMUA5O2bwkiI9fqX+FwXbEfZz4iGQPUqooCpZ6+tZkkjxsUjZ4rUhkK0A==", "name"=>"Taro", "password"=>"[FILTERED]"}
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."name" = ? LIMIT ?[0m  [["name", "Taro"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3
+Redirected to http://localhost:3000/
+Completed 302 Found in 71ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-20 06:15:31 +0900
+Processing by TopController#index as HTML
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (0.5ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mCACHE Member Load (0.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mCACHE Member Load (0.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  Rendered shared/_header.html.erb (2.8ms)
+  [1m[36mCACHE Member Load (0.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  Rendered shared/_sidebar.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/session" for 127.0.0.1 at 2018-11-20 06:15:41 +0900
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"uyoy/mEie5JWmfNkd3/5YJSB1vERqqqM1suIFST9UnDICrr/C2G/ELzFHj1jBUnOZHaELFYTBoPB1aBRf8Z7dw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-20 06:15:41 +0900
+Processing by TopController#index as HTML
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_header.html.erb (1.0ms)
+  Rendered shared/_login_form.html.erb (0.5ms)
+  Rendered shared/_sidebar.html.erb (2.0ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 23ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
